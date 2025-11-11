@@ -1,9 +1,10 @@
-#ifndef CATALOGO.H
-#define CATALOGO.H
+#ifndef CATALOGO_H
+#define CATALOGO_H
 
 
 #include <string>
 #include <vector>
+#include <memory> 
 #include "Midia.hpp"
 
     class Catalogo{
@@ -24,5 +25,5 @@
     void list_all() const;
     //Se vazio: imprimir Info: (vazio).
     //Caso contrário, imprimir cada item usando operator<< (o que chama print_info() polimorficamente).
-    }
+    };
     #endif

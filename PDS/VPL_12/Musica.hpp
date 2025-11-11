@@ -1,5 +1,5 @@
-#ifndef MUSICA.H
-#define MUSICA.H
+#ifndef MUSICA_H
+#define MUSICA_H
 #include "Midia.hpp"
 #include <string>
 

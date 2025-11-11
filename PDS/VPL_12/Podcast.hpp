@@ -1,5 +1,5 @@
-#ifndef PODCAST.H
-#define PODCAST.H
+#ifndef PODCAST_H
+#define PODCAST_H
 #include "Midia.hpp"
 
     class Podcast:public Midia{

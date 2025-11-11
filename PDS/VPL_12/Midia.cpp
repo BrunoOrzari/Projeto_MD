@@ -1,13 +1,21 @@
-#include "Midia.cpp"
+#include "Midia.hpp"
 
-Midia::Midia(std::string titulo, int duracao_s);
+Midia::Midia(std::string titulo, int duracao_s):_titulo(titulo),_duracao_s(duracao_s){
 
-Midia::virtual ~Midia() = default;
-Midia::virtual void print_info() const;// imprime as informações comuns (e será sobrescrita pelas subclasses).
-Midia::virtual void play() const = 0;// método virtual puro para simular a reprodução. A simulação consiste em imprimir uma linha por segundo do formato:
-//Playing <_titulo> [i/<_duracao_s>]
-Midia::virtual std::string tipo() const;// retorna o tipo concreto da mídia (ex.: Musica ou Podcast).
-std::ostream& operator<<(std::ostream& os, const Midia& m){ //-----------------------------Mau definifo -----------------
+}
+
+std::string Midia::get_titulo(){
+    return _titulo;
+};
+Midia::~Midia() = default;
+void Midia::print_info() const{
+}
+ 
+ std::string Midia::tipo() const{};// retorna o tipo concreto da mídia (ex.: Musica ou Podcast).
+
+std::ostream& operator<<(std::ostream& os, const Midia& m) {    //Auxílio de IA. Inicialmente, não entendi como tratar o os
     m.print_info();
-} //Sobrecarga (global):
+    return os;
+}
+ //Sobrecarga (global):
 //Deve chamar m.print_info()
