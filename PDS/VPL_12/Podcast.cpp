@@ -1,7 +1,7 @@
 #include "Podcast.hpp"
-
+#include <iostream>
 Podcast::Podcast(std::string titulo, int duracao_s, std::string host, int episodio):_titulo(titulo),_duracao_s(duracao_s),_host(host), _episodio(episodio){}// construtor.
-    void Podcast::print_info() const override{
+    void Podcast::print_info() const {//omiti override
     std::cout<< "Info: Midia"<<std::endl
     <<"Titulo: "<<_titulo<<std::endl
     <<"Duracao (s): "<<_duracao_s<<std::endl
@@ -17,9 +17,9 @@ Podcast::Podcast(std::string titulo, int duracao_s, std::string host, int episod
     Host: <_host>
     Episodio: <_episodio>
 */
-    void Podcast::play() const override{
+    void Podcast::play() const {//omiti override
         std::cout<<"Playing "<<_titulo;
     }// mesma simulação descrita em Midia.
-    std::string Podcast::tipo() const override{
+    std::string Podcast::tipo() const { //omiti override
         return "Podcast";
     }

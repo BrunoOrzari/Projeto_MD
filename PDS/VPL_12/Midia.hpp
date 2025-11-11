@@ -2,6 +2,7 @@
 #define MIDIA.H
 #include <string>
 #include  <ostream>
+#include <iostream>
 class Midia{
 
 protected:
@@ -14,9 +15,9 @@ public:
     virtual void play() const = 0;// método virtual puro para simular a reprodução. A simulação consiste em imprimir uma linha por segundo do formato:
     //Playing <_titulo> [i/<_duracao_s>]
     virtual std::string tipo() const;// retorna o tipo concreto da mídia (ex.: Musica ou Podcast).
-    Sobrecarga (global): std::ostream& operator<<(std::ostream& os, const Midia& m);
+    std::ostream& operator<<( const Midia& m);//std::ostream& os omitido
     //Deve chamar m.print_info()
-}
+};
 
 
 

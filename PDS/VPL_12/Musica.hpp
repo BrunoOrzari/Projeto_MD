@@ -1,6 +1,6 @@
 #ifndef MUSICA.H
 #define MUSICA.H
-
+#include "Midia.hpp"
 #include <string>
 
     class Musica:public Midia{
@@ -22,5 +22,5 @@
 */
     void play() const override;// mesma simulação descrita em Midia.
     std::string tipo() const override;// retorna "Musica".
-    }
+    };
     #endif
