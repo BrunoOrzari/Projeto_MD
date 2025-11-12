@@ -48,11 +48,11 @@
     void Catalogo::list_all() const{
         
         if(_itens.size()==0){
-            std::cout<<"Info: (vazio)."<<std::endl;
+            std::cout<<"Info: (vazio)"<<std::endl;
         }
         else{
             for(auto& item:_itens){
-            std::cout<<item<<std::endl;
+            std::cout<<*item<<std::endl;
         }         
         }
     }
