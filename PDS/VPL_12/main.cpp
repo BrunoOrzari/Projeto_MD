@@ -57,7 +57,7 @@ int main() {
                // playlist->clear_vetor();
                 achou = true;
                 playlist->add(catalogo.get(titulo));
-                continue;
+                break;
             }
             
         }

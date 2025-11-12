@@ -7,13 +7,16 @@
      bool Catalogo::add_musica(std::string titulo, int duracao_s, std::string artista, std::string genero){
         for(auto& item:_itens){
             if (item->get_titulo() == titulo){
+                if(item->eh_musica==1){
                 std::cout<<"Erro: titulo "<<titulo<<" repetido"<<std::endl;
                 return false;
+                }
             }
         }
    
         std::shared_ptr<Midia> musica = std::make_shared<Musica>(titulo,duracao_s,artista,genero);
         _itens.push_back(musica);
+        musica->eh_musica = 1;
         std::cout<<"OK: musica "<<titulo<<" adicionada"<<std::endl;
         return true;
      }
@@ -21,11 +24,15 @@
     bool Catalogo::add_podcast(std::string titulo, int duracao_s, std::string host, int episodio){
         for(auto& item:_itens){
             if (item->get_titulo() == titulo){
+                if(item->eh_musica==1){
+                std::cout<<"Erro: titulo "<<titulo<<" repetido"<<std::endl;
                 return false;
+                }
             }
         }
         std::shared_ptr<Midia> podcast = std::make_shared<Podcast>(titulo,duracao_s,host,episodio);
         _itens.push_back(podcast);
+        podcast->eh_musica = 0;
         std::cout<<"OK: podcast "<<titulo<<" adicionado"<<std::endl;
         return true;
      }
@@ -36,7 +43,6 @@
     std::shared_ptr<Midia> Catalogo::get(std::string titulo) const{ //encontrar end do conteudo com esse titulo
         for(auto& item:_itens){
             if (item->get_titulo() == titulo){
-                std::cout<<"Erro: titulo "<<titulo<<" repetido"<<std::endl;
                 return item;
             }
         }

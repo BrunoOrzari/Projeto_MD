@@ -19,6 +19,7 @@ public:
     virtual std::string tipo() const=0;// retorna o tipo concreto da mídia (ex.: Musica ou Podcast).
     friend std::ostream& operator<<(std::ostream& os, const Midia& m);//std::ostream& os omitido
     //Deve chamar m.print_info()
+    int eh_musica;
 };
 
 
