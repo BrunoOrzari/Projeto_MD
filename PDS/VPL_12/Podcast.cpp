@@ -1,5 +1,5 @@
 #include "Podcast.hpp"
-
+#include "Midia.hpp"
 #include <iostream>
 Podcast::Podcast(std::string titulo, int duracao_s, std::string host, int episodio):Midia( titulo, duracao_s),_host(host), _episodio(episodio){}// construtor.
     void Podcast::print_info() const {//omiti 

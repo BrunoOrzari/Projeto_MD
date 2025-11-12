@@ -11,7 +11,8 @@
                 return false;
             }
         }
-        std::shared_ptr musica = std::make_shared<Musica>(titulo,duracao_s,artista,genero);
+   
+        std::shared_ptr<Midia> musica = std::make_shared<Musica>(titulo,duracao_s,artista,genero);
         _itens.push_back(musica);
         std::cout<<"OK: musica "<<titulo<<" adicionada"<<std::endl;
         return true;
@@ -24,7 +25,7 @@
                 return false;
             }
         }
-        std::shared_ptr podcast = std::make_shared<Podcast>(titulo,duracao_s,host,episodio);
+        std::shared_ptr<Midia> podcast = std::make_shared<Podcast>(titulo,duracao_s,host,episodio);
         _itens.push_back(podcast);
         std::cout<<"OK: podcast "<<titulo<<" adicionado"<<std::endl;
         return true;
@@ -47,7 +48,7 @@
     void Catalogo::list_all() const{
         
         if(_itens.size()==0){
-            std::cout<<"imprimir Info: (vazio)."<<std::endl;
+            std::cout<<"Info: (vazio)."<<std::endl;
         }
         else{
             for(auto& item:_itens){

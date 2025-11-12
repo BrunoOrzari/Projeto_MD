@@ -10,7 +10,7 @@ void Playlist::list() const{
     int contador= 1;
     for(auto& faixa:_faixas){
         std::cout<<"Info: Faixa "<<contador<<std::endl;
-        std::cout<<faixa<<std::endl;
+        std::cout<<*faixa<<std::endl;
         contador++;
     }
 }// para cada faixa, imprimir:

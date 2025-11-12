@@ -2,6 +2,7 @@
 #define PLAYLIST_H
 #include <vector>
 #include "Midia.hpp"
+#include <memory>
 class Playlist{
 
 private:

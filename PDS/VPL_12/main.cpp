@@ -11,8 +11,8 @@
 int main() {
     Catalogo catalogo;
     std::vector<std::shared_ptr<Playlist>> playlists;
-
-   while(1){
+    bool end = false;
+   while(end==false){
     std::string entrada;
     std::cin>>entrada;
     if(entrada =="add_musica"){
@@ -42,7 +42,7 @@ int main() {
             
         }
         if(achou == false){
-            std::shared_ptr new_playlist = std::make_shared<Playlist>(nome);
+            std::shared_ptr<Playlist> new_playlist = std::make_shared<Playlist>(nome);
             playlists.push_back(new_playlist);
         }
         std::cout<<"OK: playlist "<<nome<<" criada"<<std::endl;
@@ -62,7 +62,7 @@ int main() {
             
         }
         if(achou == false){
-            std::shared_ptr new_playlist = std::make_shared<Playlist>(nome);
+            std::shared_ptr<Playlist> new_playlist = std::make_shared<Playlist>(nome);
             playlists.push_back(new_playlist);
              std::cout<<"OK: playlist "<<nome<<" criada"<<std::endl;
              new_playlist->add(catalogo.get(titulo));
@@ -92,19 +92,23 @@ int main() {
         else if(entrada =="play"){
             std::string titulo;
             std::cin>>titulo;
-            catalogo.get(titulo)->play();
+            auto midia = catalogo.get(titulo);//sugestão IA(para n looping se get == fail)
+            if (midia) {
+                midia->play();
+            }
             }
             else if(entrada =="b"){
-            avaliacao_basica()
+            //avaliacao_basica();
             }
              else if(entrada =="quit"){
-           break;
+           end = true;
             }
         
-    }
-      return 0;
-}      
-
+    
+      
+}     
+return 0; 
+}
 
 
  
