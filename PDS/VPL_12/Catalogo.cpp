@@ -21,7 +21,6 @@
     bool Catalogo::add_podcast(std::string titulo, int duracao_s, std::string host, int episodio){
         for(auto& item:_itens){
             if (item->get_titulo() == titulo){
-                std::cout<<"Erro: titulo "<<titulo<<" repetido"<<std::endl;
                 return false;
             }
         }

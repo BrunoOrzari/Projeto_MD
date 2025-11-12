@@ -7,12 +7,17 @@ void Playlist::add(std::shared_ptr<Midia> faixa){
     _faixas.push_back(faixa);
 }//: adiciona uma referência à mídia do catálogo.
 void Playlist::list() const{
-    int contador= 1;
+    if(_faixas.empty()){ 
+           std::cout<<"Info: (vazio)"<<std::endl;
+    }
+    else{int contador= 1;
     for(auto& faixa:_faixas){
         std::cout<<"Info: Faixa "<<contador<<std::endl;
         std::cout<<*faixa;
         contador++;
     }
+}
+    
 }// para cada faixa, imprimir:
 
 //Info: Faixa <pos>

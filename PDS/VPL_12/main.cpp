@@ -54,7 +54,7 @@ int main() {
         bool achou = false;
         for(auto& playlist:playlists){
             if(playlist->get_nome() == nome){
-                playlist->clear_vetor();
+               // playlist->clear_vetor();
                 achou = true;
                 playlist->add(catalogo.get(titulo));
                 continue;
